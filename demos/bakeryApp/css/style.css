@@ -1,0 +1,44 @@
+*,
+*::before {
+  outline: none !important;
+}
+.removeInputBorder,
+.removeInputBorder > *,
+.noBorderSelect,
+.noBorderSelect * {
+  background: transparent !important;
+  border: none !important;
+}
+
+.bgTransparent {
+  background-color: transparent !important;
+}
+.alignLeft {
+  margin-left: 0;
+  margin-right: auto;
+  display: block;
+}
+.alignRight {
+  margin-left: auto;
+  margin-right: 0;
+  display: block;
+}
+.alignCenter {
+  margin: 0 auto;
+}
+.uiDisplayBlock {
+  display: block;
+}
+.removeBorder {
+  border: none !important;
+}
+
+.titleLbl {
+  font-size: 1.5rem;
+  color: #eaecee;
+  font-weight: bold;
+}
+
+.sapUiTheme-sap_horizon .titleLbl {
+  color: #1d2d3e;
+}

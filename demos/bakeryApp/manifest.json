@@ -1,0 +1,187 @@
+{
+  "_version": "1.0.0",
+  "start_url": "index.html",
+  "sap.app": {
+    "id": "bakeryApp",
+    "type": "application",
+    "i18n": {
+      "bundleUrl": "i18n/i18n.properties",
+      "supportedLocales": [""],
+      "fallbackLocale": ""
+    },
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "title": "{{app.title}}",
+    "description": "{{app.description}}",
+    "offline": false,
+    "resources": "resources.json",
+    "authors": "Le-Andris Daniel",
+    "dataSources": {
+      "ingredients": {
+        "uri": "https://ldanieldev.alwaysdata.net/api/ingredients/",
+        "type": "JSON",
+        "settings": {}
+      },
+      "products": {
+        "uri": "https://ldanieldev.alwaysdata.net/api/products/",
+        "type": "JSON",
+        "settings": {}
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": false
+    }
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.110.0",
+      "libs": {
+        "sap.f": {},
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.ui.layout": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "bakeryApp.i18n.i18n",
+          "supportedLocales": [""],
+          "fallbackLocale": ""
+        }
+      },
+      "appSettings": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/AppSettings.json"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "rootView": {
+      "viewName": "module:bakeryApp/view/App.view",
+      "id": "app",
+      "async": true,
+      "height": "100%",
+      "displayBlock": true
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "async": true,
+        "controlId": "rootNavContainer",
+        "controlAggregation": "pages",
+        "transition": "slide",
+        "clearControlAggregation": false,
+        "bypassed": {
+          "target": "notFound"
+        },
+        "homeRoute": "home"
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "home",
+          "target": ["productList"]
+        },
+        {
+          "pattern": "ingredients",
+          "name": "ingredients",
+          "target": ["ingredients"]
+        },
+        {
+          "pattern": "products",
+          "name": "products",
+          "target": ["productList"]
+        },
+        {
+          "pattern": "products/view/{productId}",
+          "name": "productDetailView",
+          "target": ["productList", "productDetail"]
+        },
+        {
+          "pattern": "products/add/",
+          "name": "productDetailAdd",
+          "target": ["productList", "productDetailAdd"]
+        },
+        {
+          "pattern": "products/edit/{productId}",
+          "name": "productDetailEdit",
+          "target": ["productList", "productDetailChange"]
+        }
+      ],
+      "targets": {
+        "notFound": {
+          "viewId": "notFound",
+          "viewName": "module:bakeryApp/view/NotFound.view",
+          "viewLevel": 2
+        },
+        "ingredients": {
+          "viewId": "ingredientsView",
+          "viewName": "module:bakeryApp/view/Ingredients.view",
+          "viewLevel": 1
+        },
+        "productsContainer": {
+          "viewId": "productsContainerView",
+          "viewName": "module:bakeryApp/view/Products.view",
+          "viewLevel": 1
+        },
+        "productList": {
+          "parent": "productsContainer",
+          "viewId": "productListView",
+          "controlId": "productFlexLayout",
+          "controlAggregation": "beginColumnPages",
+          "viewName": "module:bakeryApp/view/ProductList.view",
+          "viewLevel": 2
+        },
+        "productDetail": {
+          "parent": "productsContainer",
+          "viewId": "productDetailView",
+          "viewName": "module:bakeryApp/view/ProductDetail.view",
+          "controlId": "productFlexLayout",
+          "controlAggregation": "midColumnPages",
+          "viewLevel": 3
+        },
+        "productDetailChange": {
+          "parent": "productsContainer",
+          "viewId": "productDetailChange",
+          "viewName": "module:bakeryApp/view/ProductDetailChange.view",
+          "controlId": "productFlexLayout",
+          "controlAggregation": "midColumnPages",
+          "viewLevel": 3
+        },
+        "productDetailAdd": {
+          "parent": "productsContainer",
+          "viewId": "productDetailAdd",
+          "viewName": "module:bakeryApp/view/ProductDetailChange.view",
+          "controlId": "productFlexLayout",
+          "controlAggregation": "midColumnPages",
+          "viewLevel": 3
+        }
+      }
+    }
+  }
+}
