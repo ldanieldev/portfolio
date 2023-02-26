@@ -1,6 +1,5 @@
 'use strict';
 
-// 2. GalleryFilter
 function GalleryFilter() {
   if ($('.image-gallery').length) {
     $('.image-gallery').each(function () {
@@ -26,7 +25,7 @@ function GalleryFilter() {
     });
   }
 }
-// 3. fancyboxInit
+
 function fancyboxInit() {
   var galleryFcb = $('.fancybox');
   if (galleryFcb.length) {
@@ -39,36 +38,7 @@ function fancyboxInit() {
     });
   }
 }
-// 5. testimonialCarosule
-function testimonialCarosule() {
-  if ($('.testimonials-wrap .owl-carousel').length) {
-    $('.testimonials-wrap .owl-carousel').owlCarousel({
-      loop: true,
-      margin: 0,
-      nav: false,
-      dots: true,
-      items: 2,
-      autoplay: true,
-      autoplayTimeout: 3000,
-      autoplayHoverPause: true,
-      responsive: {
-        0: {
-          items: 1
-        },
-        480: {
-          items: 1
-        },
-        600: {
-          items: 1
-        },
-        1000: {
-          items: 2
-        }
-      }
-    });
-  }
-}
-// 7. SmoothMenuScroll
+
 function SmoothMenuScroll() {
   var anchor = $('.scrollToLink');
   if (anchor.length) {
@@ -96,7 +66,7 @@ function SmoothMenuScroll() {
     });
   }
 }
-// 8. OnePageMenuScroll
+
 function OnePageMenuScroll() {
   var windscroll = $(window).scrollTop();
   if (windscroll >= 100) {
@@ -124,62 +94,7 @@ function OnePageMenuScroll() {
     $('.mainmenu.one-page-scroll-menu li:first').addClass('current');
   }
 }
-// 10. contactFormValidation
-function contactFormValidation() {
-  if ($('.contact-form').length) {
-    $('.contact-form').validate({
-      // initialize the plugin
-      rules: {
-        name: {
-          required: true
-        },
-        email: {
-          required: true,
-          email: true
-        },
-        message: {
-          required: true
-        },
-        subject: {
-          required: true
-        }
-      },
-      submitHandler: function (form) {
-        // sending value with ajax request
-        var cForm = $(form);
-        $.post(cForm.attr('action'), cForm.serialize(), function (response) {
-          cForm.parent('div').append(response);
-          cForm.find('input[type="text"]').val('');
-          cForm.find('input[type="email"]').val('');
-          cForm.find('textarea').val('');
-        });
-        return false;
-      }
-    });
-  }
-}
-// 11. videoFancybox
-function videoFancybox() {
-  if ($('.video-fancybox').length) {
-    $('.video-fancybox').on('click', function () {
-      var Self = $(this);
-      Self.fancybox({
-        padding: 0,
-        autoScale: false,
-        transitionIn: 'none',
-        transitionOut: 'none',
-        title: this.title,
-        width: 640,
-        height: 385,
-        href: this.href.replace(new RegExp('watch\\?v=', 'i'), 'v/'),
-        type: 'swf',
-        swf: { wmode: 'transparent', allowfullscreen: 'true' }
-      });
-      return false;
-    });
-  }
-}
-// 13. hiddenBarMenuConfig
+
 function hiddenBarMenuConfig() {
   var menuWrap = $('.hidden-bar .main-menu');
   // condition for small screen
@@ -211,13 +126,13 @@ function hiddenBarMenuConfig() {
     });
   }
 }
-// 14. customScrollBarHiddenSidebar
+
 function customScrollBarHiddenSidebar() {
   if ($('.hidden-bar-wrapper').length) {
     $('.hidden-bar-wrapper').mCustomScrollbar();
   }
 }
-// 15. hiddenBarToggler
+
 function hiddenBarToggler() {
   if ($('.hidden-bar-closer').length) {
     $('.hidden-bar-closer').on('click', function () {
@@ -240,13 +155,13 @@ function hiddenBarToggler() {
     });
   }
 }
-// 16. handlePreloader
+
 function handlePreloader() {
   if ($('.preloader').length) {
     $('.preloader').fadeOut();
   }
 }
-// 19. progressBarConfig
+
 function progressBarConfig() {
   var progressBar = $('.skills-name li');
   if (progressBar.length) {
@@ -271,46 +186,7 @@ function progressBarConfig() {
     });
   }
 }
-// 20. clientlCarosule
-function clientlCarosule() {
-  if ($('.client-carousel .owl-carousel').length) {
-    $('.client-carousel .owl-carousel').owlCarousel({
-      loop: true,
-      margin: 0,
-      nav: false,
-      dots: false,
-      autoWidth: true,
-      autoHeight: true,
-      items: 6,
-      autoplay: true,
-      autoplayTimeout: 2000,
-      autoplayHoverPause: true,
-      responsive: {
-        0: {
-          items: 1,
-          autoWidth: false,
-          autoHeight: false
-        },
-        480: {
-          items: 2,
-          autoWidth: false,
-          autoHeight: false
-        },
-        600: {
-          items: 3,
-          autoWidth: false,
-          autoHeight: false
-        },
-        1000: {
-          items: 6,
-          autoWidth: true,
-          autoHeight: true
-        }
-      }
-    });
-  }
-}
-// 27. backgroundSlider
+
 function backgroundSlider() {
   if ($('.bg-slider').length) {
     var elmt = $('.bg-slider.banner-one').vegas({
@@ -320,7 +196,7 @@ function backgroundSlider() {
     });
   }
 }
-// 28. typed
+
 function typed() {
   if ($('.typed').length) {
     $('.typed').typed({
@@ -346,11 +222,8 @@ jQuery(document).on('ready', function () {
   (function ($) {
     GalleryFilter();
     fancyboxInit();
-    contactFormValidation();
-    videoFancybox();
     hiddenBarMenuConfig();
     hiddenBarToggler();
-    clientlCarosule();
     backgroundSlider();
     typed();
     updateExperience();
