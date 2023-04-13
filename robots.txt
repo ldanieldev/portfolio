@@ -1,7 +1,0 @@
-User-agent: *
-Disallow: /font/
-
-User-agent: Googlebot-Image
-Disallow: /
-
-Sitemap: http://www.ldanieldev.com/sitemap.xml
