@@ -1,0 +1,7 @@
+li a {
+  @apply text-secondary;
+  text-decoration: underline;
+}
+li a:hover {
+  text-decoration: none;
+}
