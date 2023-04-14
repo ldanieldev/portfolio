@@ -10,6 +10,8 @@ import LinkListItem from './LinkListItem'
 import TechListing from './TechListing'
 import './page.css'
 
+export const dynamic = 'force-static'
+
 export async function generateStaticParams() {
   return Projects.map((project: Project) => ({
     project: project.slug,
