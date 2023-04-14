@@ -4,6 +4,7 @@
   "dictionaryDefinitions": [],
   "dictionaries": [],
   "words": [
+    "Cloudinary",
     "compucare",
     "Cplusplus",
     "daisyui",
@@ -17,6 +18,7 @@
     "Kitts",
     "Lindenwood",
     "Nextdotjs",
+    "nextjs",
     "Nodedotjs",
     "O'Fallon",
     "Plaiceholder",
@@ -27,8 +29,7 @@
     "svgr",
     "trileaf",
     "tsfl",
-    "Visualstudiocode",
-    "Cloudinary"
+    "Visualstudiocode"
   ],
   "ignoreWords": [],
   "import": []

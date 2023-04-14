@@ -7,8 +7,8 @@ import { FaCode, FaGithub, FaGlobe } from 'react-icons/fa'
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl'
 import { WebSite, WithContext } from 'schema-dts'
 import LinkListItem from './LinkListItem'
-import './page.css'
 import TechListing from './TechListing'
+import './page.css'
 
 export async function generateStaticParams() {
   return Projects.map((project: Project) => ({
