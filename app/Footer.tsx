@@ -33,7 +33,12 @@ export default function Footer() {
           title="Contact Me"
           className="hover:text-primary"
         >
-          <BsFillEnvelopeAtFill size={28} />
+          <div
+            className="tooltip tooltip-left tooltip-primary font-bold"
+            data-tip="Contact Me"
+          >
+            <BsFillEnvelopeAtFill size={28} />
+          </div>
         </Link>
         <Link
           href="https://www.linkedin.com/in/ldaniel38/"
@@ -41,7 +46,12 @@ export default function Footer() {
           title="View My LinkedIn Profile"
           className="hover:text-primary"
         >
-          <FaLinkedin size={28} />
+          <div
+            className="tooltip tooltip-left tooltip-primary font-bold"
+            data-tip="View My LinkedIn Profile"
+          >
+            <FaLinkedin size={28} />
+          </div>
         </Link>
         <Link
           href="/Le-Andris-Daniel-Resume.pdf"
@@ -49,7 +59,12 @@ export default function Footer() {
           title="View My Resume"
           className="hover:text-primary"
         >
-          <FaIdCard size={28} />
+          <div
+            className="tooltip tooltip-left tooltip-primary font-bold"
+            data-tip="View My Resume"
+          >
+            <FaIdCard size={28} />
+          </div>
         </Link>
       </div>
     </footer>

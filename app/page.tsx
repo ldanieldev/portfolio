@@ -103,30 +103,45 @@ export default function Home() {
 
             <div className="flex flex-row justify-around">
               <Link href={`mailto:${Meta.email}`} title="Contact Me">
-                <BsFillEnvelopeAtFill
-                  className="text-white hover:text-secondary"
-                  size={36}
-                />
+                <div
+                  className="tooltip tooltip-primary font-bold"
+                  data-tip="Contact Me"
+                >
+                  <BsFillEnvelopeAtFill
+                    className="text-white hover:text-secondary"
+                    size={36}
+                  />
+                </div>
               </Link>
               <Link
                 href="https://www.linkedin.com/in/ldaniel38/"
                 target="_blank"
                 title="View My LinkedIn Profile"
               >
-                <FaLinkedin
-                  className="text-white hover:text-secondary"
-                  size={36}
-                />
+                <div
+                  className="tooltip tooltip-primary font-bold"
+                  data-tip="View My LinkedIn Profile"
+                >
+                  <FaLinkedin
+                    className="text-white hover:text-secondary"
+                    size={36}
+                  />
+                </div>
               </Link>
               <Link
                 href="/Le-Andris-Daniel-Resume.pdf"
                 target="_blank"
                 title="View My Resume"
               >
-                <FaIdCard
-                  className="text-white hover:text-secondary"
-                  size={36}
-                />
+                <div
+                  className="tooltip tooltip-primary font-bold"
+                  data-tip="View My Resume"
+                >
+                  <FaIdCard
+                    className="text-white hover:text-secondary"
+                    size={36}
+                  />
+                </div>
               </Link>
             </div>
             <p className="py-6 text-white text-lg">
