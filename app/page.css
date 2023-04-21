@@ -1,0 +1,7 @@
+.gradientBg {
+  background-image: linear-gradient(to top, #a3bded 0%, #6991c7 100%);
+}
+
+.animate-bounce {
+  animation: bounce 1.5s infinite !important;
+}
