@@ -78,7 +78,9 @@ export const EmploymentHistory = [
         duties: [
           'Support legacy web applications for timekeeping and benefit tracking.',
           'Support legacy web APIs.',
-          'Implement strategic projects that improve operational efficiency across the Human Resources organization',
+          'Implement strategic projects that improve operational efficiency across the Human Resources organization teams.',
+          'Support weekly payroll processing audits.',
+          'Work within an agile team to prioritize and plan development.',
         ],
         title: 'Developer',
       },
@@ -92,7 +94,7 @@ export const EmploymentHistory = [
         date: 'December 2017 - May 2022',
         duties: [
           'Web application programming, and support for SAP MII applications to meet unique manufacturing needs and processes',
-          'Develop custom BLS Transactions to support manufacturing process requirements.',
+          'Develop BLS Transactions to support manufacturing data processing requirements.',
           'Develop user interface screens with various web development tools (SAP UI5, HTML5, CSS, JavaScript, Etc.)',
           'Develop required SQL tables, and queries to support manufacturing application requirements.',
           'Perform internal software and functional testing.',
@@ -331,6 +333,7 @@ export const Projects: Project[] = [
     liveUrl: Meta.url,
     codeUrl: 'https://github.com/ldanieldev/portfolio',
     projectDetails: [
+      'Nextjs 13 app router',
       'Search Engine Optimization (SEO)',
       'Ensure compatibility in all modern browsers',
       'Responsive design for multiple devices',
