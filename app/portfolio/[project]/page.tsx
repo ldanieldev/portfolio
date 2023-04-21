@@ -7,10 +7,8 @@ import { FaCode, FaGithub, FaGlobe } from 'react-icons/fa'
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl'
 import { WebSite, WithContext } from 'schema-dts'
 import LinkListItem from './LinkListItem'
-import TechListing from './TechListing'
 import './page.css'
-
-export const dynamic = 'force-static'
+import TechListing from './TechListing'
 
 export async function generateStaticParams() {
   return Projects.map((project: Project) => ({
@@ -21,7 +19,7 @@ export async function generateStaticParams() {
 export default async function Project({
   params,
 }: {
-  params: { project: string; hash: string }
+  params: { project: string }
 }) {
   const project: Project | undefined = Projects.filter(
     (project) => project.slug === params.project

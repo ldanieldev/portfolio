@@ -6,7 +6,7 @@ export default function NotFound() {
       <TbError404 className="text-primary mx-auto mb-6" size={150} />
 
       <h1 className="text-4xl font-bold text-center">
-        Oops, Unable to Locate That Project
+        Oops, Unable to Locate That Page
       </h1>
     </div>
   )
