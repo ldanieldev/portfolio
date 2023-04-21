@@ -189,7 +189,7 @@ export default async function Project({
                   {codeUrl && (
                     <LinkListItem
                       url={codeUrl}
-                      linkText="View the Demo"
+                      linkText="View the Code"
                       icon={FaGithub}
                     />
                   )}
