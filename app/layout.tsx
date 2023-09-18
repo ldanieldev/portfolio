@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 import { Cookie, Poppins } from 'next/font/google'
 import { Suspense } from 'react'
-import { Meta } from './data'
 import Footer from './Footer'
-import './globals.css'
 import Header from './Header'
+import { Meta } from './data'
+import './globals.css'
 
 const poppins = Poppins({
   weight: ['400', '700'],
@@ -28,6 +28,7 @@ interface Meta {
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL(Meta.url),
   title: {
     default: Meta.title,
     template: `%s | ${Meta.title}`,
