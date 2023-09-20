@@ -2,13 +2,15 @@ import { Meta, Projects } from '@/app/data'
 import type Project from '@/app/interfaces/Project'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
+import fs from 'node:fs/promises'
+import path from 'node:path'
 import { getPlaiceholder } from 'plaiceholder'
 import { FaCode, FaGithub, FaGlobe } from 'react-icons/fa'
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl'
 import { WebSite, WithContext } from 'schema-dts'
 import LinkListItem from './LinkListItem'
-import './page.css'
 import TechListing from './TechListing'
+import './page.css'
 
 export async function generateStaticParams() {
   return Projects.map((project: Project) => ({
@@ -55,16 +57,19 @@ export default async function Project({
 
   const formattedImgList = await Promise.all(
     imageList.map(async (image) => {
-      const { base64, img } = await getPlaiceholder(
-        `/img/portfolio/${slug}/${image}`,
-        {
-          size: 10,
-        }
-      )
+      const src = `/img/portfolio/${slug}/${image}`
+      const buffer = await fs.readFile(path.join('./public', src))
+
+      const {
+        base64,
+        metadata: { height, width },
+      } = await getPlaiceholder(buffer, { size: 10 })
 
       return {
-        src: img.src,
         placeholder: base64,
+        src,
+        height,
+        width,
       }
     })
   )
