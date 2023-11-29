@@ -1,16 +1,15 @@
-'use client'
+import { Meta } from '@/app/data'
+import AnimatedCard from '@/components/AnimatedCard'
+import SocialIconLink from '@/components/SocialIconLink'
+import TypedWrapper from '@/components/TypedWrapper'
+import AboutSvg from '@/public/img/home/about.svg'
+import HeroSvg from '@/public/img/home/hero.svg'
+import PortfolioSvg from '@/public/img/home/portfolio.svg'
+import portrait from '@/public/img/le-andris-daniel.png'
 import Link from 'next/link'
-import { useEffect, useRef } from 'react'
 import { BsFillEnvelopeAtFill } from 'react-icons/bs'
 import { FaIdCard, FaLinkedin } from 'react-icons/fa'
 import { Person, WithContext } from 'schema-dts'
-import Typed from 'typed.js'
-import AboutSvg from '../public/img/home/about.svg'
-import HeroSvg from '../public/img/home/hero.svg'
-import PortfolioSvg from '../public/img/home/portfolio.svg'
-import portrait from '../public/img/le-andris-daniel.png'
-import { Meta } from './data'
-import './page.css'
 
 export default function Home() {
   const jsonLd: WithContext<Person> = {
@@ -44,26 +43,6 @@ export default function Home() {
     ],
   }
 
-  const TypedElement = useRef(null)
-
-  useEffect(() => {
-    if (!TypedElement.current) {
-      return
-    }
-
-    const typed = new Typed(TypedElement.current, {
-      stringsElement: '.typed-strings',
-      typeSpeed: 100,
-      backDelay: 1000,
-      loop: true,
-      contentType: 'html',
-    })
-
-    return () => {
-      typed.destroy()
-    }
-  }, [])
-
   return (
     <>
       <script
@@ -72,26 +51,20 @@ export default function Home() {
       />
 
       <div
-        className="hero bg-base-200 gradientBg"
-        style={{ minHeight: 'calc(100vh - 64px)' }}
+        className="hero bg-base-200"
+        style={{
+          minHeight: 'calc(100vh - 64px)',
+          backgroundImage: 'linear-gradient(to top, #a3bded 0%, #6991c7 100%)',
+        }}
       >
         <div className="hero-content text-center relative z-10">
           <div className="max-w-md">
             <h1 className="text-xl md:text-4xl font-bold text-white mb-4">
               Hello I&apos;m <br />
-              <div className="typed-wrapper">
-                <div className="typed-strings hidden">
-                  <p>Le-Andris Daniel</p>
-                  <p>Professional</p>
-                  <p>Reliable</p>
-                </div>
-                <span
-                  ref={TypedElement}
-                  className="text-primary uppercase font-bold"
-                >
-                  Le-Andris Daniel
-                </span>
-              </div>
+              <TypedWrapper
+                fallbackText="Le-Andris Daniel"
+                stringList={['Le-Andris Daniel', 'Professional', 'Reliable']}
+              />
             </h1>
             <HeroSvg
               className="mx-auto w-1/2 lg:w-auto"
@@ -102,47 +75,28 @@ export default function Home() {
             </h2>
 
             <div className="flex flex-row justify-around">
-              <Link href={`mailto:${Meta.email}`} title="Contact Me">
-                <div
-                  className="tooltip tooltip-primary font-bold"
-                  data-tip="Contact Me"
-                >
-                  <BsFillEnvelopeAtFill
-                    className="text-white hover:text-secondary"
-                    size={36}
-                  />
-                </div>
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/ldaniel38/"
-                target="_blank"
-                title="View My LinkedIn Profile"
-              >
-                <div
-                  className="tooltip tooltip-primary font-bold"
-                  data-tip="View My LinkedIn Profile"
-                >
-                  <FaLinkedin
-                    className="text-white hover:text-secondary"
-                    size={36}
-                  />
-                </div>
-              </Link>
-              <Link
-                href="/Le-Andris-Daniel-Resume.pdf"
-                target="_blank"
-                title="View My Resume"
-              >
-                <div
-                  className="tooltip tooltip-primary font-bold"
-                  data-tip="View My Resume"
-                >
-                  <FaIdCard
-                    className="text-white hover:text-secondary"
-                    size={36}
-                  />
-                </div>
-              </Link>
+              <SocialIconLink
+                Icon={BsFillEnvelopeAtFill}
+                tooltip="Email Me"
+                url={`mailto:${Meta.email}`}
+                iconSize={36}
+                iconColor="text-white"
+              />
+              <SocialIconLink
+                Icon={FaLinkedin}
+                tooltip="Connect on LinkedIn"
+                url="https://www.linkedin.com/in/ldaniel38/"
+                iconSize={36}
+                iconColor="text-white"
+              />
+
+              <SocialIconLink
+                Icon={FaIdCard}
+                tooltip="View My Resume"
+                url="/Le-Andris-Daniel-Resume.pdf"
+                iconSize={36}
+                iconColor="text-white"
+              />
             </div>
             <p className="py-6 text-white text-lg">
               I am a web developer with a passion for building web applications.
@@ -161,51 +115,28 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="z-0 text-white hidden xl:flex px-5 max-w-screen-2xl imgCardContainer absolute animate-bounce mx-auto top-1/3 right-0 left-0 flex-row justify-between">
-          <div className="card w-96 glass -skew-y-6 center cursor-pointer opacity-60 hover:opacity-100 hover:shadow-2xl hover:shadow-base-400">
-            <Link href="/about">
-              <figure className="px-10 pt-10">
-                <AboutSvg width={350} height={250} alt="about illustration" />
-              </figure>
-              <div className="card-body mx-auto">
-                <h2 className="card-title block text-center">About</h2>
-                <p>
-                  Learn more about my skills and experience that I&apos;m
-                  confident will bring invaluable benefits to your business.
-                </p>
-                <div className="card-actions justify-center">
-                  <button className="btn btn-secondary text-white">
-                    Get to know me
-                  </button>
-                </div>
-              </div>
-            </Link>
-          </div>
+        <div
+          className="z-0 text-white hidden xl:flex px-5 max-w-screen-2xl absolute mx-auto top-1/3 right-0 left-0 flex-row justify-between"
+          style={{ animation: 'bounce 1.5s infinite' }}
+        >
+          <AnimatedCard
+            Icon={AboutSvg}
+            title="About"
+            body="Learn more about my skills and experience that I'm
+                  confident will bring invaluable benefits to your business."
+            buttonText="Get to know me"
+            url="/about"
+          />
 
-          <div className="card w-96 glass skew-y-6 cursor-pointer opacity-60 hover:opacity-100 hover:shadow-2xl hover:shadow-base-400">
-            <Link href="/portfolio">
-              <figure className="px-10 pt-10">
-                <PortfolioSvg
-                  className="w-auto"
-                  width={350}
-                  height={250}
-                  alt="portfolio illustration"
-                />
-              </figure>
-              <div className="card-body mx-auto">
-                <h2 className="card-title block text-center">Portfolio</h2>
-                <p>
-                  View my portfolio, to see some of the projects I&apos;ve
-                  designed and developed.
-                </p>
-                <div className="card-actions justify-center">
-                  <button className="btn btn-secondary text-white">
-                    View my Portfolio
-                  </button>
-                </div>
-              </div>
-            </Link>
-          </div>
+          <AnimatedCard
+            Icon={PortfolioSvg}
+            title="Portfolio"
+            body="View my portfolio, to see some of the projects I've
+            designed and developed."
+            buttonText="View my Portfolio"
+            url="/portfolio"
+            mirrored
+          />
         </div>
       </div>
     </>

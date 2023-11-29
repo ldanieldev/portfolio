@@ -1,5 +1,6 @@
 'use client'
 import { Meta } from '@/app/data'
+import SocialIconLink from '@/components/SocialIconLink'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { BsFillEnvelopeAtFill } from 'react-icons/bs'
@@ -28,44 +29,30 @@ export default function Footer() {
         <p>Copyright &copy; {new Date().getFullYear()} - All right reserved</p>
       </div>
       <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-        <Link
-          href={`mailto:${Meta.email}`}
-          title="Contact Me"
-          className="hover:text-primary"
-        >
-          <div
-            className="tooltip tooltip-left tooltip-primary font-bold"
-            data-tip="Contact Me"
-          >
-            <BsFillEnvelopeAtFill size={28} />
-          </div>
-        </Link>
-        <Link
-          href="https://www.linkedin.com/in/ldaniel38/"
-          target="_blank"
-          title="View My LinkedIn Profile"
-          className="hover:text-primary"
-        >
-          <div
-            className="tooltip tooltip-left tooltip-primary font-bold"
-            data-tip="View My LinkedIn Profile"
-          >
-            <FaLinkedin size={28} />
-          </div>
-        </Link>
-        <Link
-          href="/Le-Andris-Daniel-Resume.pdf"
-          target="_blank"
-          title="View My Resume"
-          className="hover:text-primary"
-        >
-          <div
-            className="tooltip tooltip-left tooltip-primary font-bold"
-            data-tip="View My Resume"
-          >
-            <FaIdCard size={28} />
-          </div>
-        </Link>
+        <SocialIconLink
+          Icon={BsFillEnvelopeAtFill}
+          tooltip="Email Me"
+          url={`mailto:${Meta.email}`}
+          iconSize={28}
+          tooltipPosition="left"
+          iconHoverColor="text-primary"
+        />
+        <SocialIconLink
+          Icon={FaLinkedin}
+          tooltip="Connect on LinkedIn"
+          url="https://www.linkedin.com/in/ldaniel38/"
+          iconSize={28}
+          tooltipPosition="left"
+          iconHoverColor="text-primary"
+        />
+        <SocialIconLink
+          Icon={FaIdCard}
+          tooltip="View My Resume"
+          url="/Le-Andris-Daniel-Resume.pdf"
+          iconSize={28}
+          tooltipPosition="left"
+          iconHoverColor="text-primary"
+        />
       </div>
     </footer>
   )
