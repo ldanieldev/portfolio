@@ -1,7 +1,7 @@
 import { Meta, Projects } from '@/app/data'
-//import { MetadataRoute } from 'next'
+import { MetadataRoute } from 'next'
 
-export default function sitemap() /*: MetadataRoute.Sitemap*/ {
+export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
 
   //static routes
