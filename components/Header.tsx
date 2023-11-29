@@ -33,7 +33,7 @@ export default function Header() {
           </Link>
         </div>
         <div className="flex-none">
-          <ul className="menu menu-horizontal px-1 font-bold">
+          <ul className="menu menu-horizontal gap-x-2 px-1 font-bold">
             <li className="">
               <Link href="/" className={pathMatchRoute('/') ? 'active' : ''}>
                 {pathMatchRoute('/') ? (
