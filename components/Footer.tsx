@@ -1,13 +1,13 @@
 'use client'
+import { Meta } from '@/app/data'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { BsFillEnvelopeAtFill } from 'react-icons/bs'
 import { FaIdCard, FaLinkedin } from 'react-icons/fa'
 import Logo from '../public/img/le-andris-daniel-logo.svg'
-import { Meta } from './data'
 
 export default function Footer() {
-  const pathname: string = usePathname()
+  const pathname = usePathname()
 
   return pathname === '/' ? (
     <></>

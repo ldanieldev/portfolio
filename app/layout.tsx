@@ -1,8 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Cookie, Poppins } from 'next/font/google'
-import { Suspense } from 'react'
-import Footer from './Footer'
-import Header from './Header'
+import Footer from '../components/Footer'
+import Header from '../components/Header'
 import { Meta } from './data'
 import './globals.css'
 
@@ -74,9 +73,7 @@ export default function RootLayout({
     >
       <body className="flex flex-col h-screen justify-between min-w-[375px]">
         <Header />
-        <Suspense fallback="<Loading />">
-          <main className="grow">{children}</main>
-        </Suspense>
+        <main className="grow">{children}</main>
         <Footer />
       </body>
     </html>
