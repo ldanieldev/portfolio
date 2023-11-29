@@ -8,7 +8,7 @@ type props = {
   tooltipPosition?: 'bottom' | 'left' | 'right' | 'top'
   iconSize: number
   iconColorTwCls?: string
-  iconHoverColorTwCls?: string
+  iconHoverColorTwCls?: `hover:${string}`
 }
 
 export default function SocialIconLink({
@@ -18,7 +18,7 @@ export default function SocialIconLink({
   tooltip,
   tooltipPosition = 'top',
   iconColorTwCls,
-  iconHoverColorTwCls = 'text-secondary',
+  iconHoverColorTwCls = 'hover:text-secondary',
 }: props) {
   return (
     <Link href={url} target="_blank" title={tooltip}>
@@ -27,7 +27,7 @@ export default function SocialIconLink({
         data-tip={tooltip}
       >
         <Icon
-          className={`${iconColorTwCls} hover:${iconHoverColorTwCls}`}
+          className={`${iconColorTwCls} ${iconHoverColorTwCls}`}
           size={iconSize}
         />
       </div>
