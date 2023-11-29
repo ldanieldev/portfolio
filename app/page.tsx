@@ -115,10 +115,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div
-          className="z-0 text-white hidden xl:flex px-5 max-w-screen-2xl absolute mx-auto top-1/3 right-0 left-0 flex-row justify-between"
-          style={{ animation: 'bounce 1.5s infinite' }}
-        >
+        <div className="z-0 text-white hidden xl:flex px-5 max-w-screen-2xl absolute mx-auto top-1/3 right-0 left-0 flex-row justify-between animate-card-bounce">
           <AnimatedCard
             Icon={AboutSvg}
             title="About"

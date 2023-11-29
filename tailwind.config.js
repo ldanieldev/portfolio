@@ -18,6 +18,9 @@ module.exports = {
         cookie: ['var(--font-cookie)'],
         sans: ['var(--font-poppins)', defaultTheme.fontFamily.sans],
       },
+      animation: {
+        'card-bounce': 'bounce 1.75s infinite',
+      },
     },
   },
 

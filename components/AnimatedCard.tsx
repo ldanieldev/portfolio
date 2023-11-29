@@ -20,8 +20,8 @@ export default function AnimatedCard({
   return (
     <div
       className={`card w-96 glass cursor-pointer opacity-60 hover:opacity-100 hover:shadow-2xl hover:shadow-base-400 ${
-        mirrored ? '-' : ''
-      }skew-y-6`}
+        mirrored ? 'skew-y-6' : '-skew-y-6'
+      }`}
     >
       <Link href={url}>
         <figure className="px-10 pt-10">
