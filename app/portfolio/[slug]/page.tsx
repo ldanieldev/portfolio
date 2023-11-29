@@ -1,5 +1,4 @@
 import { Meta, Projects } from '@/app/data'
-import type Project from '@/app/interfaces/Project'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import fs from 'node:fs/promises'
@@ -8,12 +7,11 @@ import { getPlaiceholder } from 'plaiceholder'
 import { FaCode, FaGithub, FaGlobe } from 'react-icons/fa'
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl'
 import { WebSite, WithContext } from 'schema-dts'
-import LinkListItem from './LinkListItem'
-import TechListing from './TechListing'
-import './page.css'
+import LinkListItem from './_components/LinkListItem'
+import TechStackList from './_components/TechStackList'
 
 export async function generateStaticParams() {
-  return Projects.map((project: Project) => ({
+  return Projects.map((project) => ({
     project: project.slug,
   }))
 }
@@ -21,11 +19,9 @@ export async function generateStaticParams() {
 export default async function Project({
   params,
 }: {
-  params: { project: string }
+  params: { slug: string }
 }) {
-  const project: Project | undefined = Projects.filter(
-    (project) => project.slug === params.project
-  )[0]
+  const project = Projects.filter((project) => project.slug === params.slug)[0]
 
   if (!project) {
     notFound()
@@ -152,19 +148,19 @@ export default async function Project({
                 <h3 className="text-2xl font-bold">Tech Stack</h3>
                 <hr className="mb-4" />
                 {languages && (
-                  <TechListing
+                  <TechStackList
                     label="Coding Languages:"
                     technologies={languages}
                   />
                 )}
                 {frameworks && (
-                  <TechListing
+                  <TechStackList
                     label="Frameworks / Libraries / CMSs:"
                     technologies={frameworks}
                   />
                 )}
                 {tools && (
-                  <TechListing
+                  <TechStackList
                     label="Tools / Platforms:"
                     technologies={tools}
                   />
@@ -181,21 +177,21 @@ export default async function Project({
                     <LinkListItem
                       url={liveUrl}
                       linkText="Visit the Website"
-                      icon={FaGlobe}
+                      Icon={FaGlobe}
                     />
                   )}
                   {demoUrl && (
                     <LinkListItem
                       url={demoUrl}
                       linkText="View the Demo"
-                      icon={FaGlobe}
+                      Icon={FaGlobe}
                     />
                   )}
                   {codeUrl && (
                     <LinkListItem
                       url={codeUrl}
                       linkText="View the Code"
-                      icon={FaGithub}
+                      Icon={FaGithub}
                     />
                   )}
                 </ul>

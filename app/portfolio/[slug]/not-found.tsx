@@ -1,10 +1,9 @@
 import { Projects } from '@/app/data'
-import Project from '@/app/interfaces/Project'
 import { FaSearch } from 'react-icons/fa'
 import ProjectListItem from '../ProjectListItem'
 
 export default function NotFound() {
-  const projectList: Project[] = [Projects[0], Projects[1], Projects[2]]
+  const projectList = [Projects[0], Projects[1], Projects[2]]
 
   return (
     <div className="p-12 h-full w-full">
@@ -15,7 +14,7 @@ export default function NotFound() {
         </h1>
 
         <h3 className="text-2xl font-bold text-center py-6">
-          View more projects below
+          Check out one of these awesome projects instead
         </h3>
       </div>
 
