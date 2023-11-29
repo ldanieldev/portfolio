@@ -1,29 +1,28 @@
 import { IconType } from 'react-icons/lib'
-import { HexColor } from '../types/HexColor'
-import SkillListItem from './SkillListItem'
+import GridItem from './ListItem'
 
-interface props {
+type props = {
   title: string
   skillList: {
     [skill: string]: {
       name: string
       icon: IconType
-      color: HexColor
+      color: string
     }
   }
 }
 
-export default function SkillList(props: props) {
+export default function SkillList({ title, skillList }: props) {
   return (
     <div>
-      <h3 className="mt-6 text-lg font-semibold">{props.title}</h3>
+      <h3 className="mt-6 text-lg font-semibold">{title}</h3>
       <hr className="my-6 w-3/4" />
       <ul className="flex flex-row flex-wrap">
-        {Object.values(props.skillList).map((skill, idx) => (
-          <SkillListItem
+        {Object.values(skillList).map((skill, idx) => (
+          <GridItem
             key={idx}
             name={skill.name}
-            icon={skill.icon}
+            Icon={skill.icon}
             color={skill.color}
           />
         ))}
