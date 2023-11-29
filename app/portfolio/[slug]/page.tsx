@@ -12,15 +12,17 @@ import TechStackList from './_components/TechStackList'
 
 export async function generateStaticParams() {
   return Projects.map((project) => ({
-    project: project.slug,
+    slug: project.slug,
   }))
 }
 
-export default async function Project({
-  params,
-}: {
-  params: { slug: string }
-}) {
+type props = {
+  params: {
+    slug: string
+  }
+}
+
+export default async function Project({ params }: props) {
   const project = Projects.filter((project) => project.slug === params.slug)[0]
 
   if (!project) {

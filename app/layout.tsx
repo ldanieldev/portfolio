@@ -58,9 +58,6 @@ export const metadata: Metadata = {
   },
 }
 
-export const dynamic = 'force-static'
-export const dynamicParams = false
-
 export default function RootLayout({
   children,
 }: {
