@@ -80,14 +80,14 @@ export default function Home() {
                 tooltip="Email Me"
                 url={`mailto:${Meta.email}`}
                 iconSize={36}
-                iconColor="text-white"
+                iconColorTwCls="text-white"
               />
               <SocialIconLink
                 Icon={FaLinkedin}
                 tooltip="Connect on LinkedIn"
                 url="https://www.linkedin.com/in/ldaniel38/"
                 iconSize={36}
-                iconColor="text-white"
+                iconColorTwCls="text-white"
               />
 
               <SocialIconLink
@@ -95,7 +95,7 @@ export default function Home() {
                 tooltip="View My Resume"
                 url="/Le-Andris-Daniel-Resume.pdf"
                 iconSize={36}
-                iconColor="text-white"
+                iconColorTwCls="text-white"
               />
             </div>
             <p className="py-6 text-white text-lg">

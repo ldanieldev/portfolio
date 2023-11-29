@@ -1,5 +1,3 @@
-import { DaisyUiColors } from '@/types'
-import { Tailwindest } from 'Tailwindest'
 import Link from 'next/link'
 import { IconType } from 'react-icons'
 
@@ -9,8 +7,8 @@ type props = {
   tooltip: string
   tooltipPosition?: 'bottom' | 'left' | 'right' | 'top'
   iconSize: number
-  iconColor?: Tailwindest['color'] | DaisyUiColors
-  iconHoverColor?: Tailwindest['color'] | DaisyUiColors
+  iconColorTwCls?: string
+  iconHoverColorTwCls?: string
 }
 
 export default function SocialIconLink({
@@ -19,8 +17,8 @@ export default function SocialIconLink({
   iconSize,
   tooltip,
   tooltipPosition = 'top',
-  iconColor,
-  iconHoverColor = 'text-secondary',
+  iconColorTwCls,
+  iconHoverColorTwCls = 'text-secondary',
 }: props) {
   return (
     <Link href={url} target="_blank" title={tooltip}>
@@ -29,7 +27,7 @@ export default function SocialIconLink({
         data-tip={tooltip}
       >
         <Icon
-          className={`${iconColor} hover:${iconHoverColor}`}
+          className={`${iconColorTwCls} hover:${iconHoverColorTwCls}`}
           size={iconSize}
         />
       </div>

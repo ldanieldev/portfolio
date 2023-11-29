@@ -23,9 +23,9 @@
     "react-icons": "^4.8.0",
     "schema-dts": "^1.1.2",
     "sharp": "^0.32.0",
+    "tailwindest": "^2.2.1",
     "typed.js": "^2.0.12",
-    "typescript": "5.3.2",
-    "tailwindest": "^2.2.1"
+    "typescript": "5.3.2"
   },
   "devDependencies": {
     "@netlify/plugin-nextjs": "^4.40.1",
