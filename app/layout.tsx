@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Cookie, Poppins } from 'next/font/google'
 import { Suspense } from 'react'
 import Footer from './Footer'
@@ -27,6 +27,12 @@ interface Meta {
   logo: string
 }
 
+export const viewport: Viewport = {
+  initialScale: 1,
+  maximumScale: 5,
+  width: 'device-width',
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL(Meta.url),
   title: {
@@ -37,11 +43,6 @@ export const metadata: Metadata = {
   keywords: Meta.keywords,
   authors: [{ name: 'Le-Andris Daniel', url: Meta.url }],
   icons: { icon: '/favicon.ico' },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-  },
   robots: {
     index: true,
     follow: true,
