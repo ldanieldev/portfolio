@@ -1,16 +1,16 @@
+import { EmploymentHistory, Meta, SkillLists, Techniques } from '@/app/data'
+import EmploymentTimeline from '@/components/EmploymentTimeline'
+import SkillList from '@/components/SkillList'
+import AboutSvg from '@/public/img/about/about.svg'
+import CookingSvg from '@/public/img/about/cooking.svg'
+import GamesSvg from '@/public/img/about/games.svg'
+import ReadingSvg from '@/public/img/about/reading.svg'
+import WeightliftingSvg from '@/public/img/about/weightlifting.svg'
 import type { Metadata } from 'next'
 import { AboutPage, WithContext } from 'schema-dts'
-import AboutSvg from '../../public/img/about/about.svg'
-import CookingSvg from '../../public/img/about/cooking.svg'
-import GamesSvg from '../../public/img/about/games.svg'
-import ReadingSvg from '../../public/img/about/reading.svg'
-import WeightliftingSvg from '../../public/img/about/weightlifting.svg'
-import { EmploymentHistory, Meta, SkillLists, Techniques } from '../data'
-import CompanyList from './CompanyList'
-import Hobby from './Hobby'
-import './page.css'
-import SkillList from './SkillList'
-import TechniqueCard from './TechniqueCard'
+import Hobby from './_components/Hobby'
+import SectionTitle from './_components/SectionTitle'
+import TechniqueCard from './_components/TechniqueCard'
 
 export const metadata: Metadata = {
   description:
@@ -95,7 +95,7 @@ export default function About() {
                 key={idx}
                 title={technique.title}
                 text={technique.desc}
-                icon={technique.icon}
+                Icon={technique.icon}
               />
             ))}
           </div>
@@ -108,20 +108,18 @@ export default function About() {
       >
         <div className="flex-grow lg:w-3/5 mb-12">
           <section id="skills" className="mb-12">
-            <h2 className="heading">Skills</h2>
-            <hr className="separator" />
+            <SectionTitle text="Skills" />
+
             <SkillList title={languages.title} skillList={languages.skills} />
             <SkillList title={frameworks.title} skillList={frameworks.skills} />
             <SkillList title={tools.title} skillList={tools.skills} />
           </section>
 
           <section id="hobbies" className="mx-auto mb-12 lg:max-w-lg">
-            <h2 className="heading">Hobbies</h2>
-            <hr className="separator" />
+            <SectionTitle text="Hobbies" />
 
             <Hobby
-              icon={CookingSvg}
-              altText="cooking illustration"
+              Icon={CookingSvg}
               title="Cooking"
               text="
                 Cooking is one of my favorite hobbies. It's a great way to
@@ -133,8 +131,7 @@ export default function About() {
             />
 
             <Hobby
-              icon={GamesSvg}
-              altText="games illustration"
+              Icon={GamesSvg}
               title="Video Games"
               text="Playing video games is one of my favorites ways to unwind,
                 relax, and have a ton of fun. Who wouldn't love that? My
@@ -145,8 +142,7 @@ export default function About() {
             />
 
             <Hobby
-              icon={ReadingSvg}
-              altText="reading illustration"
+              Icon={ReadingSvg}
               title="Reading"
               text="Reading is one of my favorite leisure activities because It
               helps me to expand my horizons and gain a new perspective on
@@ -157,8 +153,7 @@ export default function About() {
             />
 
             <Hobby
-              icon={WeightliftingSvg}
-              altText="weightlifting illustration"
+              Icon={WeightliftingSvg}
               title="Weightlifting"
               text="I really enjoy weightlifting! It's a great way to stay fit,
               build strength and have fun doing it. I also love that I can
@@ -171,15 +166,9 @@ export default function About() {
         </div>
 
         <section id="employment-history" className="flex-grow lg:w-2/5">
-          <h2 className="heading">Employment History</h2>
+          <SectionTitle text="Employment History" />
 
-          <hr className="separator" />
-
-          <ol className="relative border-l-4 border-gray-200">
-            {EmploymentHistory.map((company, idx) => (
-              <CompanyList key={idx} company={company} />
-            ))}
-          </ol>
+          <EmploymentTimeline data={EmploymentHistory} />
         </section>
       </section>
     </>

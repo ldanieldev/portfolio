@@ -1,16 +1,10 @@
-interface props {
-  position: {
-    date: string
-    duties: string[]
-    title: string
-  }
+type props = {
+  date: string
+  duties: string[]
+  title: string
 }
 
-export default function PositionList(props: props) {
-  const {
-    position: { date, title, duties },
-  } = props
-
+export default function PositionList({ date, title, duties }: props) {
   return (
     <ul className="mt-2 ml-4">
       <li className="flex justify-between mb-4">

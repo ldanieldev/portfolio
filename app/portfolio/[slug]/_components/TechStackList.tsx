@@ -1,18 +1,19 @@
-import { HexColor } from '@/app/types/HexColor'
 import { IconType } from 'react-icons/lib'
 
-export default function TechListing(props: {
+type props = {
   label: string
   technologies: {
     name: string
     icon: IconType
-    color: HexColor
+    color: string
   }[]
-}) {
+}
+
+export default function TechStackList({ label, technologies }: props) {
   return (
     <ul className="mb-6 flex flex-row items-start">
-      <li className="pl-4 font-bold self-center">{props.label}</li>
-      {props.technologies.map((technology, idx) => (
+      <li className="pl-4 font-bold self-center">{label}</li>
+      {technologies.map((technology, idx) => (
         <li key={idx} className="pl-4">
           <div
             className="tooltip tooltip-primary font-bold"

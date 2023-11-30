@@ -43,8 +43,6 @@ import {
 } from 'react-icons/si'
 import { TbJson, TbSql } from 'react-icons/tb'
 import logo from '../public/img/le-andris-daniel-logo.svg'
-import Project from './interfaces/Project'
-import SkillList from './interfaces/SkillList'
 
 export const Meta = {
   title: 'Portfolio of JavaScript Web Developer Le-Andris Daniel',
@@ -192,7 +190,7 @@ export const EmploymentHistory = [
   },
 ]
 
-export const SkillLists: SkillList = {
+export const SkillLists = {
   languages: {
     title: 'Coding Languages',
     skills: {
@@ -264,7 +262,15 @@ export const SkillLists: SkillList = {
   },
 }
 
-export const Projects: Project[] = [
+export const projectCategories = [
+  { title: 'All', key: 'all' },
+  { title: 'Websites', key: 'website' },
+  { title: 'E-Commerce', key: 'eCommerce' },
+  { title: 'Content Management Systems', key: 'cms' },
+  { title: 'Web Apps', key: 'webApp' },
+]
+
+export const Projects = [
   {
     slug: 'nextjs-ecommerce-store',
     categories: ['eCommerce', 'webApp'],

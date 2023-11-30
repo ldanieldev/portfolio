@@ -1,14 +1,14 @@
 import Link from 'next/link'
 
-export default function ProjectListItem(props: {
+type props = {
   slug: string
   title: string
   summary: string
-}) {
-  const { slug, title, summary } = props
+}
 
+export default function ProjectListItem({ slug, title, summary }: props) {
   return (
-    <Link href={'/portfolio/' + slug}>
+    <Link href={`/portfolio/${slug}`}>
       <div
         className="overflow-hidden bg-cover rounded-lg cursor-pointer h-96 group"
         style={{

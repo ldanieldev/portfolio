@@ -1,7 +1,0 @@
-.heading {
-  @apply text-blue-500 text-2xl font-semibold text-center capitalize lg:text-3xl;
-}
-
-.separator {
-  @apply mx-auto my-8 w-3/4 border-slate-400;
-}

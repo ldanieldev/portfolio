@@ -1,7 +1,7 @@
+import { Meta, Projects } from '@/app/data'
 import type { Metadata } from 'next'
 import { CollectionPage, WithContext } from 'schema-dts'
-import { Meta, Projects } from '../data'
-import ProjectList from './ProjectList'
+import PortfolioClient from './_components/client'
 
 export const metadata: Metadata = {
   description:
@@ -44,7 +44,7 @@ export default function Portfolio() {
           Latest Work
         </h1>
 
-        <ProjectList />
+        <PortfolioClient />
       </div>
     </>
   )

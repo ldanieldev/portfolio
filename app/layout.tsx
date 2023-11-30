@@ -1,8 +1,7 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Cookie, Poppins } from 'next/font/google'
-import { Suspense } from 'react'
-import Footer from './Footer'
-import Header from './Header'
+import Footer from '../components/Footer'
+import Header from '../components/Header'
 import { Meta } from './data'
 import './globals.css'
 
@@ -27,6 +26,12 @@ interface Meta {
   logo: string
 }
 
+export const viewport: Viewport = {
+  initialScale: 1,
+  maximumScale: 5,
+  width: 'device-width',
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL(Meta.url),
   title: {
@@ -37,11 +42,6 @@ export const metadata: Metadata = {
   keywords: Meta.keywords,
   authors: [{ name: 'Le-Andris Daniel', url: Meta.url }],
   icons: { icon: '/favicon.ico' },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-  },
   robots: {
     index: true,
     follow: true,
@@ -58,9 +58,6 @@ export const metadata: Metadata = {
   },
 }
 
-export const dynamic = 'force-static'
-export const dynamicParams = false
-
 export default function RootLayout({
   children,
 }: {
@@ -73,9 +70,7 @@ export default function RootLayout({
     >
       <body className="flex flex-col h-screen justify-between min-w-[375px]">
         <Header />
-        <Suspense fallback="<Loading />">
-          <main className="grow">{children}</main>
-        </Suspense>
+        <main className="grow">{children}</main>
         <Footer />
       </body>
     </html>
