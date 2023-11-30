@@ -23,27 +23,18 @@ module.exports = {
       },
     },
   },
-
   daisyui: {
     themes: [
       {
         mytheme: {
           primary: '#93c5fd',
-
           secondary: '#3b82f6',
-
           accent: '#1f2937',
-
-          neutral: '#e5e7eb',
-
+          neutral: '#93c5fd',
           'base-100': '#f3f4f6',
-
           info: '#e0f2fe',
-
           success: '#d1fae5',
-
           warning: '#fef08a',
-
           error: '#fda4af',
         },
       },
