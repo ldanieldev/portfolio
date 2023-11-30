@@ -34,7 +34,7 @@ export default function Footer() {
           tooltip="Email Me"
           url={`mailto:${Meta.email}`}
           iconSize={28}
-          tooltipPosition="left"
+          tooltipPosition="tooltip-left"
           iconHoverColorTwCls="hover:text-primary"
         />
         <SocialIconLink
@@ -42,7 +42,7 @@ export default function Footer() {
           tooltip="Connect on LinkedIn"
           url="https://www.linkedin.com/in/ldaniel38/"
           iconSize={28}
-          tooltipPosition="left"
+          tooltipPosition="tooltip-left"
           iconHoverColorTwCls="hover:text-primary"
         />
         <SocialIconLink
@@ -50,7 +50,7 @@ export default function Footer() {
           tooltip="View My Resume"
           url="/Le-Andris-Daniel-Resume.pdf"
           iconSize={28}
-          tooltipPosition="left"
+          tooltipPosition="tooltip-left"
           iconHoverColorTwCls="hover:text-primary"
         />
       </div>
