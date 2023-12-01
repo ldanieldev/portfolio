@@ -33,7 +33,8 @@
     "Tailwindest",
     "trileaf",
     "tsfl",
-    "Visualstudiocode"
+    "Visualstudiocode",
+    "Zustand"
   ],
   "ignoreWords": [],
   "import": []
