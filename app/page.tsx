@@ -81,6 +81,7 @@ export default function Home() {
                 url={`mailto:${Meta.email}`}
                 iconSize={36}
                 iconColorTwCls="text-white"
+                tooltipTextTwCls="[--color-primary-content:#fff]"
               />
               <SocialIconLink
                 Icon={FaLinkedin}
@@ -88,6 +89,7 @@ export default function Home() {
                 url="https://www.linkedin.com/in/ldaniel38/"
                 iconSize={36}
                 iconColorTwCls="text-white"
+                tooltipTextTwCls="[--color-primary-content:#fff]"
               />
 
               <SocialIconLink
@@ -96,6 +98,7 @@ export default function Home() {
                 url="/Le-Andris-Daniel-Resume.pdf"
                 iconSize={36}
                 iconColorTwCls="text-white"
+                tooltipTextTwCls="[--color-primary-content:#fff]"
               />
             </div>
             <p className="py-6 text-white text-lg">

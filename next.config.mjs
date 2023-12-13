@@ -1,11 +1,16 @@
 // @ts-check
-import withPlaiceholder from "@plaiceholder/next";
 
 /** @type {import('next').NextConfig} */
-
 const nextConfig = {
   reactStrictMode: false,
-  swcMinify: true,
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
+      },
+    },
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -16,4 +21,4 @@ const nextConfig = {
   },
 }
 
-export default withPlaiceholder(nextConfig)
+export default nextConfig

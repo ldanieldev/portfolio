@@ -106,7 +106,7 @@ export default function About() {
         id="employment-skills-history"
         className="container mx-auto py-10 px-6 flex flex-col lg:flex-row"
       >
-        <div className="flex-grow lg:w-3/5 mb-12">
+        <div className="grow lg:w-3/5 mb-12">
           <section id="skills" className="mb-12">
             <SectionTitle text="Skills" />
 
@@ -165,7 +165,7 @@ export default function About() {
           </section>
         </div>
 
-        <section id="employment-history" className="flex-grow lg:w-2/5">
+        <section id="employment-history" className="grow lg:w-2/5">
           <SectionTitle text="Employment History" />
 
           <EmploymentTimeline data={EmploymentHistory} />

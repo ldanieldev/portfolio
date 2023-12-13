@@ -1,3 +1,68 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin "daisyui" {
+  themes: mytheme --default;
+}
+
+@plugin "daisyui/theme" {
+  name: 'mytheme';
+  default: true;
+  color-scheme: light;
+
+  --color-base-100: #f3f4f6;
+  --color-base-200: #e5e7eb;
+  --color-base-300: #d1d5db;
+  --color-base-content: #1f2937;
+
+  --color-primary: #93c5fd;
+  --color-primary-content: #1f2937;
+
+  --color-secondary: #3b82f6;
+  --color-secondary-content: #ffffff;
+
+  --color-accent: #1f2937;
+  --color-accent-content: #ffffff;
+
+  --color-neutral: #93c5fd;
+  --color-neutral-content: #1f2937;
+
+  --color-info: #e0f2fe;
+  --color-info-content: #1f2937;
+
+  --color-success: #d1fae5;
+  --color-success-content: #1f2937;
+
+  --color-warning: #fef08a;
+  --color-warning-content: #1f2937;
+
+  --color-error: #fda4af;
+  --color-error-content: #1f2937;
+
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+
+  --size-selector: 0.25rem;
+  --size-field: 0.3rem;
+
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+
+  --card-fs: 1rem;
+  --cardtitle-fs: 1.25rem;
+}
+
+@theme {
+  --breakpoint-xs: 30rem;
+  --animate-card-bounce: bounce 1.75s infinite;
+}
+
+@theme inline {
+  --font-sans:
+    var(--font-poppins), ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+  --font-cookie: var(--font-cookie);
+}

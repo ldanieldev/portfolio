@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Cookie, Poppins } from 'next/font/google'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
+import SpeedInsightsClient from '../components/SpeedInsightsClient'
 import { Meta } from './data'
 import './globals.css'
 
@@ -66,11 +67,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${poppins.variable} ${cookie.variable} scroll-smooth`}
     >
-      <body className="flex flex-col h-screen justify-between min-w-[375px]">
+      <body className="flex flex-col h-screen justify-between min-w-93.75">
         <Header />
         <main className="grow">{children}</main>
+        <SpeedInsightsClient />
         <Footer />
       </body>
     </html>

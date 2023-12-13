@@ -17,13 +17,14 @@ export async function generateStaticParams() {
 }
 
 type props = {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export default async function Project({ params }: props) {
-  const project = Projects.filter((project) => project.slug === params.slug)[0]
+  const { slug: slugParam } = await params
+  const project = Projects.filter((project) => project.slug === slugParam)[0]
 
   if (!project) {
     notFound()

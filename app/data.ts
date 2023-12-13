@@ -1,9 +1,11 @@
 import { BsFiletypeXml } from 'react-icons/bs'
 import {
   FaGlobe,
+  FaMagento,
   FaPencilRuler,
   FaSearchDollar,
   FaShoppingCart,
+  FaWindows,
 } from 'react-icons/fa'
 import { MdColorLens, MdDevicesOther } from 'react-icons/md'
 import {
@@ -11,7 +13,7 @@ import {
   SiBitbucket,
   SiBootstrap,
   SiCplusplus,
-  SiCss3,
+  SiCss,
   SiExpress,
   SiFirebase,
   SiGit,
@@ -23,8 +25,6 @@ import {
   SiIntellijidea,
   SiJavascript,
   SiJquery,
-  SiMagento,
-  SiMicrosoft,
   SiMongodb,
   SiMysql,
   SiNextdotjs,
@@ -39,10 +39,10 @@ import {
   SiShopify,
   SiTailwindcss,
   SiTypescript,
-  SiVisualstudiocode,
   SiWordpress,
 } from 'react-icons/si'
 import { TbJson, TbSql } from 'react-icons/tb'
+import { VscVscode } from 'react-icons/vsc'
 import logo from '../public/img/le-andris-daniel-logo.svg'
 
 export const Meta = {
@@ -196,7 +196,7 @@ export const SkillLists = {
     title: 'Coding Languages',
     skills: {
       html: { name: 'HTML5', icon: SiHtml5, color: '#F06529' },
-      css: { name: 'CSS3', icon: SiCss3, color: '#2965f1' },
+      css: { name: 'CSS3', icon: SiCss, color: '#2965f1' },
       php: { name: 'PHP', icon: SiPhp, color: '#777bb3' },
       javaScript: {
         name: 'JavaScript',
@@ -232,7 +232,7 @@ export const SkillLists = {
         icon: SiTailwindcss,
         color: '#07B6D5',
       },
-      magento: { name: 'Magento', icon: SiMagento, color: '#f26322' },
+      magento: { name: 'Magento', icon: FaMagento, color: '#f26322' },
       wordPress: { name: 'WordPress', icon: SiWordpress, color: '#464342' },
       shopify: { name: 'Shopify', icon: SiShopify, color: '#95BF47' },
     },
@@ -249,11 +249,11 @@ export const SkillLists = {
       postman: { name: 'Postman', icon: SiPostman, color: '#ff6c37' },
       sass: { name: 'Sass', icon: SiSass, color: '#CD6799' },
       MySQL: { name: 'MySQL', icon: SiMysql, color: '#00758f' },
-      msSQL: { name: 'MS SQL Server', icon: SiMicrosoft, color: '#00A4EFFF' },
+      msSQL: { name: 'MS SQL Server', icon: FaWindows, color: '#00A4EFFF' },
       sapMII: { name: 'SAP MII', icon: SiSap, color: '#1873B4' },
       vsCode: {
         name: 'Visual Studio',
-        icon: SiVisualstudiocode,
+        icon: VscVscode,
         color: '#00A4EFFF',
       },
       intelliJ: { name: 'IntelliJ IDEA', icon: SiIntellijidea, color: '#000' },
