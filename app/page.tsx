@@ -53,7 +53,7 @@ export default function Home() {
       <div
         className="hero bg-base-200"
         style={{
-          minHeight: 'calc(100vh - 64px)',
+          minHeight: 'calc(100vh - 68px)',
           backgroundImage: 'linear-gradient(to top, #a3bded 0%, #6991c7 100%)',
         }}
       >
