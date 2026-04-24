@@ -1,18 +1,19 @@
 import { BsFiletypeXml } from 'react-icons/bs'
 import {
   FaGlobe,
-  FaMagento,
   FaPencilRuler,
   FaSearchDollar,
   FaShoppingCart,
   FaWindows,
+  FaCogs,
+  FaMagento,
 } from 'react-icons/fa'
-import { MdColorLens, MdDevicesOther } from 'react-icons/md'
+import { MdColorLens } from 'react-icons/md'
 import {
   SiAngular,
   SiBitbucket,
   SiBootstrap,
-  SiCplusplus,
+  SiDjango,
   SiCss,
   SiExpress,
   SiFirebase,
@@ -40,6 +41,8 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiWordpress,
+  SiPython,
+  SiDrizzle,
 } from 'react-icons/si'
 import { TbJson, TbSql } from 'react-icons/tb'
 import { VscVscode } from 'react-icons/vsc'
@@ -71,17 +74,37 @@ export const Meta = {
 export const EmploymentHistory = [
   {
     location: 'Saint Louis, Missouri',
+    name: 'Service Metal Products',
+    positions: [
+      {
+        date: 'January 2024 - Present',
+        duties: [
+          'Architect, develop, and maintain the customer-facing e-commerce portal generating an average of $1.4M in monthly revenue, using Python, Django, React, and Next.js.',
+          'Design and implement internal cloud-based web applications that integrate with the SAP Business One ERP, including a sales order entry tool that streamlined inside-sales workflows and reduced order processing time.',
+          'Lead data security audits and upgrades across the web application stack, hardening authentication, authorization, and handling of customer and transactional data.',
+          'Design and build RESTful APIs and integrations connecting the e-commerce portal, SAP B1, and internal business systems.',
+          'Translate business and client requests into formal software requirements, delivering reviewed, documented, production-grade code.',
+          'Partner cross-functionally with sales, operations, and IT leadership to execute on initiatives, roadmap priorities, and drive measurable business impact.',
+          'Provide technical direction in complex problem-solving scenarios and mentor engineers through code review and pair programming.',
+          'Onboard and train new team members on internal tools, codebase conventions, and development workflows.',
+        ],
+        title: 'Senior Software Engineer',
+      },
+    ],
+  },
+  {
+    location: 'Saint Louis, Missouri',
     name: 'World Wide Technology',
     positions: [
       {
         date: 'May 2022 - March 2023',
         duties: [
-          'Support and enhance legacy web applications for timekeeping and benefit tracking.',
-          'Update configurations to UKG Kronos Timekeeping to accommodate new HR story requirements.',
-          'Support and enhance legacy web APIs.',
-          'Implement strategic projects that improve operational efficiency across the Human Resources Organization.',
-          'Support weekly payroll processing audits by finding and reconciling any erroneous data in the captured records.',
-          'Work within an agile team to prioritize and plan development and user stories.',
+          'Maintained and enhanced legacy web applications supporting enterprise timekeeping and benefit tracking for thousands of employees.',
+          'Configured UKG Kronos Timekeeping to meet evolving HR requirements, translating user stories into production-ready changes.',
+          'Supported and enhanced legacy REST APIs powering critical HR workflows, improving reliability and reducing recurring defects.',
+          'Delivered strategic projects that improved operational efficiency across the Human Resources organization.',
+          'Performed weekly payroll processing audits, identifying and reconciling erroneous captured data to ensure accurate compensation.',
+          'Collaborated within an Agile team to refine, estimate, and deliver user stories on a consistent sprint cadence.',
         ],
         title: 'Developer',
       },
@@ -94,13 +117,13 @@ export const EmploymentHistory = [
       {
         date: 'December 2017 - May 2022',
         duties: [
-          'Web app programming, and support for SAP MII web apps to meet unique manufacturing needs and processes.',
-          'Develop BLS Transactions to support manufacturing data processing requirements.',
-          'Develop user interface screens with various web development tools (SAP UI5, HTML, CSS, JavaScript, Etc.)',
-          'Develop required SQL tables, and queries to support manufacturing application requirements.',
-          'Identified, recommended, and prioritized new web technologies, features, and applications in conjunction with business leaders and department managers',
-          'Research and development of company best practices for SAPUI5, and emerging web technologies',
-          'Create reporting dashboards and scoreboards to support business admin processes and workflows',
+          'Designed, developed, and supported SAP MII web applications tailored to the unique manufacturing processes of enterprise clients.',
+          'Built BLS (Business Logic Services) transactions powering mission-critical manufacturing data processing and integration.',
+          'Developed responsive user interfaces using SAPUI5, HTML5, CSS3, and JavaScript to modernize plant-floor tooling.',
+          'Authored SQL schemas, queries, and stored procedures supporting manufacturing application data requirements.',
+          'Partnered with business leaders and department managers to identify, recommend, and prioritize new web features and applications.',
+          'Researched emerging web technologies and established internal best practices for SAPUI5 development across the consultancy.',
+          'Delivered executive reporting dashboards and real-time scoreboards providing visibility into manufacturing KPIs.',
         ],
         title: 'MII UX/UI Consultant',
       },
@@ -113,15 +136,15 @@ export const EmploymentHistory = [
       {
         date: 'December 2012 - December 2017',
         duties: [
-          'Web application programming, and support for SAP MII applications to meet unique manufacturing needs and processes.',
-          'Develop custom BLS Transactions to support manufacturing process requirements.',
-          'Develop user interface screens with various web development tools (SAP UI5, Angular, HTML5, CSS, Etc.)',
-          'Develop required SQL tables, and queries to support manufacturing application requirements.',
-          'Perform internal software and functional testing.',
-          "Participate in change management activities to train a client's staff on using created software",
-          'Identified, recommended, and prioritized new Web features and applications in conjunction with business leaders and department managers',
-          'Conducted research into current and emerging Web technologies and issues in support of Web development efforts',
-          'Create reporting dashboards and scoreboards to support business admin processes and workflows',
+          'Developed and supported SAP MII applications tailored to the unique manufacturing workflows of industrial clients.',
+          'Built custom BLS transactions to automate complex manufacturing processes and data integrations.',
+          'Engineered responsive interface screens using SAPUI5, Angular, HTML5, CSS, and JavaScript to replace legacy paper-based workflows.',
+          'Designed and implemented SQL tables, queries, and stored procedures backing manufacturing application features.',
+          'Executed internal software and functional testing to ensure quality prior to client delivery.',
+          'Led change management and training sessions to onboard client staff to newly deployed software solutions.',
+          'Partnered with business leaders and department managers to identify, recommend, and prioritize new web features and applications.',
+          'Researched current and emerging web technologies to guide architectural and tooling decisions across the team.',
+          'Delivered reporting dashboards and scoreboards supporting administrative processes and operational workflows.',
         ],
         title: 'MII UX/UI Consultant',
       },
@@ -132,60 +155,20 @@ export const EmploymentHistory = [
     name: 'TriLeaf Designs',
     positions: [
       {
-        date: 'November 2011 - November 2012',
+        date: 'August 2011 - November 2012',
         duties: [
-          "Manage company and clients' website security, hosting, domain names, and databases. ",
-          'Coordinate, plan, and manage the projects and activities of the Web Department.',
-          'Train and mentor new web programming interns.',
-          'Converting PSD designs to full-fledged responsive webpages',
-          'Website SEO coding and implementation',
-          "Maintain, recommend, and implement new solutions to the company's web infrastructure",
-          'Work closely with UX/UI designers, other web developers, and project stakeholders to understand requirements and translate into well-formed code',
-          'Develop and implement hand coded HTML, CSS, JavaScript, & PHP for public-facing websites, landing pages, CMS, Email Templates, etc.',
-          'Develop backend logic and database connections for websites with PHP and SQL',
-          'Develop, maintain, and enhance WordPress websites, themes, and plugins',
+          'Led the Web Department, coordinating project plans, timelines, and deliverables across a team of developers and interns.',
+          'Managed website security, hosting, DNS, and databases for the company and its full client portfolio.',
+          'Mentored and trained incoming web programming interns, establishing onboarding practices and code review standards.',
+          'Converted PSD designs into pixel-perfect, fully responsive webpages across a broad range of client projects.',
+          'Implemented on-page SEO best practices to improve organic search visibility for client sites.',
+          "Recommended and implemented modernizations to the company's web infrastructure and tooling.",
+          'Collaborated with UX/UI designers, developers, and stakeholders to translate requirements into well-structured, maintainable code.',
+          'Hand-coded HTML, CSS, JavaScript, and PHP for public-facing websites, landing pages, CMS builds, and email templates.',
+          'Built backend logic and database integrations using PHP and SQL for dynamic websites and web applications.',
+          'Developed and maintained custom WordPress themes and plugins tailored to client requirements.',
         ],
         title: 'Lead Web Programmer',
-      },
-      {
-        date: 'August 2011 - November 2011',
-        duties: [
-          'Work closely with UX/UI designers, other web developers, and project managers to understand requirements and translate into well-formed code',
-          'Converting PSD designs to full-fledged responsive webpages',
-          'Website SEO coding and implementation',
-          'Develop and implement hand coded HTML, CSS, JavaScript, & PHP for public-facing websites, landing pages, CMS, Email Templates, etc.',
-          'Develop backend logic and database connections for websites using PHP',
-          'Develop, maintain, and enhance WordPress websites, themes, and plugins',
-        ],
-        title: 'Web Programmer Intern',
-      },
-    ],
-  },
-  {
-    location: 'Saint Charles, Missouri',
-    name: 'Lindenwood University',
-    positions: [
-      {
-        date: 'August 2009 - August 2011',
-        duties: [
-          'Manage the diverse concerns of students, parents, and faculty',
-          'Coordinate activates with the Resident Director and Resident Assistants',
-          'Mediate roommate conflicts and oversee room change process',
-          'Plan and implement social activities',
-          'Provide leadership in emergency situations as needed within the dorm and community',
-          'Assist and support residents with the day to day personal, social, academic, and occupational challenges of university life',
-        ],
-        title: 'Assistant Resident Director',
-      },
-      {
-        date: 'August 2008 - August 2009',
-        duties: [
-          'Assist in the supervision of the residence hall, responding to all requests and emergencies',
-          'Mediate roommate conflicts and oversee room change process',
-          'Provide leadership in emergency situations as needed within the dorm and community',
-          'Assist and support residents with the day-to-day personal, social, academic, and occupational challenges of university life',
-        ],
-        title: 'Resident Assistant',
       },
     ],
   },
@@ -208,11 +191,11 @@ export const SkillLists = {
         icon: SiTypescript,
         color: '#3178c6',
       },
+      python: { name: 'Python', icon: SiPython, color: '#3776AB' },
       jQuery: { name: 'JQuery', icon: SiJquery, color: '#0868ac' },
       sql: { name: 'SQL', icon: TbSql, color: '#fff' },
       xml: { name: 'XML', icon: BsFiletypeXml, color: '#000' },
       json: { name: 'JSON', icon: TbJson, color: '#fff' },
-      cpp: { name: 'C++', icon: SiCplusplus, color: '#00599C' },
     },
   },
   frameworks: {
@@ -225,6 +208,7 @@ export const SkillLists = {
       expressJs: { name: 'Express.js', icon: SiExpress, color: '#000' },
       mongoose: { name: 'Mongoose', icon: SiMongodb, color: '#800' },
       prisma: { name: 'prisma', icon: SiPrisma, color: '#2D3748' },
+      drizzle: { name: 'Drizzle', icon: SiDrizzle, color: '#95BF47' },
       sapUI5: { name: 'SAPUI5', icon: SiSap, color: '#1873B4' },
       bootstrap: { name: 'Bootstrap', icon: SiBootstrap, color: '#9013fe' },
       tailWindCss: {
@@ -235,6 +219,7 @@ export const SkillLists = {
       magento: { name: 'Magento', icon: FaMagento, color: '#f26322' },
       wordPress: { name: 'WordPress', icon: SiWordpress, color: '#464342' },
       shopify: { name: 'Shopify', icon: SiShopify, color: '#95BF47' },
+      django: { name: 'Django', icon: SiDjango, color: '#092E20' },
     },
   },
   tools: {
@@ -787,32 +772,32 @@ export const Projects = [
 
 export const Techniques = [
   {
-    desc: 'I ensure maximum compatibly of websites. Make sure it looks the same in all browsers and operating systems.',
-    icon: MdDevicesOther,
-    title: 'Cross-Browser Compatibility',
+    desc: 'Build end-to-end web applications with modern stacks like Next.js, React, Node.js, and Django — from database schema to production-deployed UI.',
+    icon: FaGlobe,
+    title: 'Full-Stack Web Development',
   },
   {
-    desc: 'Ensure your website is found on the web with search engine optimization and keyword analysis.',
-    icon: FaSearchDollar,
-    title: 'Search Engine Optimization',
-  },
-  {
-    desc: 'Shopping carts, and payment solutions though systems like Magento, WordPress and PayPal.',
+    desc: 'Launch online stores and checkout experiences using Shopify, Stripe, and custom Next.js storefronts backed by MySQL or MongoDB.',
     icon: FaShoppingCart,
     title: 'E-Commerce',
   },
   {
-    desc: 'Make sure your website looks the same in all devices and operating systems.',
+    desc: 'Connect web applications to third-party services and enterprise systems through REST APIs, webhooks, and ERP integrations such as SAP.',
+    icon: FaCogs,
+    title: 'API & System Integrations',
+  },
+  {
+    desc: 'Design fluid interfaces that adapt seamlessly from mobile to desktop, tested against real devices and viewport sizes.',
     icon: FaPencilRuler,
     title: 'Responsive Design',
   },
   {
-    desc: 'Rich, clean website development using HTML, PHP, jQuery, and frameworks such as WordPress and Magento.',
-    icon: FaGlobe,
-    title: 'Web Development',
+    desc: 'Improve organic discoverability through semantic HTML, structured metadata, performance tuning, and keyword-driven content strategy.',
+    icon: FaSearchDollar,
+    title: 'Search Engine Optimization',
   },
   {
-    desc: 'Convert Adobe Illustrator and PhotoShop designs into a HTML or PHP website with great attention to detail.',
+    desc: 'Translate Figma, Adobe XD, and Photoshop designs into pixel-perfect, accessible HTML and CSS with meticulous attention to detail.',
     icon: MdColorLens,
     title: 'Designs to Code',
   },
