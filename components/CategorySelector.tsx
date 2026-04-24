@@ -16,10 +16,10 @@ export default function CategorySelector({
       {categories.map((category, idx) => (
         <button
           key={idx}
-          className={`h-12 px-8 py-2 -mb-px text-sm text-center  bg-transparent whitespace-nowrap border-b-2 sm:text-base focus:outline-none hover:border-gray-400 ${
+          className={`h-12 px-8 py-2 -mb-px text-sm text-center bg-transparent whitespace-nowrap border-b-2 sm:text-base focus:outline-none hover:border-gray-400 ${
             activeKey === category.key
               ? 'text-blue-600 bg-transparent border-blue-500'
-              : 'text-gray-700 border-gray-700'
+              : 'text-gray-700 border-gray-700 hover:cursor-pointer'
           }`}
           onClick={() => onClickHandler(category)}
         >

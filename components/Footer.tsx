@@ -13,7 +13,7 @@ export default function Footer() {
   return pathname === '/' ? (
     <></>
   ) : (
-    <footer className="footer flex flex-col items-center p-4 border-t-2 border-b-slate-800 md:grid">
+    <footer className="footer flex flex-col items-center p-4 border-t-2 border-t-gray-200 md:grid md:grid-flow-col">
       <div className="items-center md:grid-flow-col">
         <Link href="/" className="text-4xl grid-cols-12">
           <Logo

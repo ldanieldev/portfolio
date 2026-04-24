@@ -33,9 +33,12 @@ export default function Header() {
           </Link>
         </div>
         <div className="flex-none">
-          <ul className="menu menu-horizontal gap-x-2 px-1 font-bold">
+          <ul className="menu menu-horizontal gap-x-2 px-1 font-bold text-base">
             <li className="">
-              <Link href="/" className={pathMatchRoute('/') ? 'active' : ''}>
+              <Link
+                href="/"
+                className={pathMatchRoute('/') ? 'menu-active' : ''}
+              >
                 {pathMatchRoute('/') ? (
                   <TiHome size={20} />
                 ) : (
@@ -47,7 +50,9 @@ export default function Header() {
             <li tabIndex={0}>
               <Link
                 href="/portfolio"
-                className={pathMatchRoute('/portfolio', false) ? 'active' : ''}
+                className={
+                  pathMatchRoute('/portfolio', false) ? 'menu-active' : ''
+                }
               >
                 {pathMatchRoute('/portfolio', false) ? (
                   <TiImage size={20} />
@@ -60,7 +65,7 @@ export default function Header() {
             <li>
               <Link
                 href="/about"
-                className={pathMatchRoute('/about') ? 'active' : ''}
+                className={pathMatchRoute('/about') ? 'menu-active' : ''}
               >
                 {pathMatchRoute('/about') ? (
                   <TiUser size={20} />

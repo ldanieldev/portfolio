@@ -51,32 +51,26 @@ export default function About() {
           <div>
             <h1 className="text-5xl font-bold">Who Am I?</h1>
             <p className="py-2 text-lg">
-              I am an independent, efficient, detail-oriented, and
-              self-motivated individual prepared to excel in the field of
-              Information Technology and seeking employment with a company where
-              my skills and experience will be an asset to the business while
-              furthering my knowledge and abilities in the process.
+              I&apos;m a Senior Software Engineer based in the Saint Louis area
+              with&nbsp;{new Date().getFullYear() - 2011}&nbsp;years of
+              experience building production web applications end-to-end. My
+              work has spanned customer-facing e-commerce platforms driving
+              seven-figure monthly revenue, internal tools that integrate with
+              enterprise ERP systems like SAP, and everything in between. My
+              day-to-day stack spans Python, Django, React, Next.js, and
+              TypeScript — from database schema and REST APIs through to the
+              deployed UI.
             </p>
             <p className="py-2 text-lg">
-              From coding to development, I bring a wealth of programming skills
-              and work experience to the table. With&nbsp;
-              {new Date().getFullYear() - 2011}&nbsp;years of experience working
-              on complex projects, I strive to create beautiful,
-              well-constructed web solutions that satisfy customer needs and
-              drive business growth.
-            </p>
-            <p className="py-2 text-lg">
-              I am an eager, focused learner and constantly keep up to date with
-              the latest web technologies and industry standards to ensure that
-              the solution is reliable, accessible and secure. My skills span a
-              broad range including web development, as well as experience in
-              customer service, data analysis and project management.
-            </p>
-            <p className="py-2 text-lg">
-              As an experienced professional, I am committed to providing
-              excellent customer service and delivering high-quality results.
-              Let&apos;s work together to bring your ideas to life and create
-              solution that make a real impact.
+              I care most about writing code that&apos;s reliable, secure, and
+              maintainable, and about raising the bar of the team around me
+              through mentorship, thoughtful code review, and clear technical
+              direction. Across my career I&apos;ve shipped work in e-commerce,
+              ERP and manufacturing systems, HR and payroll, CMS platforms, and
+              mobile-ready apps — and I&apos;m always looking for the next hard
+              problem to learn from. If you&apos;re hiring for a senior
+              engineering role and what you&apos;ve seen here resonates,
+              I&apos;d love to talk.
             </p>
           </div>
         </div>
@@ -106,7 +100,7 @@ export default function About() {
         id="employment-skills-history"
         className="container mx-auto py-10 px-6 flex flex-col lg:flex-row"
       >
-        <div className="flex-grow lg:w-3/5 mb-12">
+        <div className="grow lg:w-3/5 mb-12">
           <section id="skills" className="mb-12">
             <SectionTitle text="Skills" />
 
@@ -165,7 +159,7 @@ export default function About() {
           </section>
         </div>
 
-        <section id="employment-history" className="flex-grow lg:w-2/5">
+        <section id="employment-history" className="grow lg:w-2/5">
           <SectionTitle text="Employment History" />
 
           <EmploymentTimeline data={EmploymentHistory} />
